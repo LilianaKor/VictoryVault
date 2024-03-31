@@ -38,7 +38,7 @@ def test_transition_to_cart_by_name():
     # Assertion to check if the correct product is displayed on the page
     product_title = browser.find_element(By.CSS_SELECTOR, "div[class='inventory_details_name']").text
     print(product_title)
-    time.sleep(3)
+    time.sleep(4)
     assert product_title == 'Sauce Labs Backpack'
 
 

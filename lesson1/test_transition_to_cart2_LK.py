@@ -42,7 +42,7 @@ def test_transit_item_title():
 
     # clicking on the item title
     item_title = browser.find_element(By.XPATH, '//*[@id="item_4_title_link"]/div')
-    time.sleep(4)
+    time.sleep(3)
     item_title.click()
     time.sleep(4)
 
