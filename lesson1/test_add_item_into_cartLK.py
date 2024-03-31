@@ -17,13 +17,13 @@ def test_add_item_into_cartLKor():
     time.sleep(3)
     button = browser.find_element(By.CSS_SELECTOR, "button[data-test='add-to-cart-sauce-labs-backpack']")
     button.click()
-    time.sleep(3)
+    time.sleep(4)
 
     cart = browser.find_element(By.CSS_SELECTOR, "a[class = 'shopping_cart_link']")
     cart.click()
 
     item_text_after = browser.find_element(By.CSS_SELECTOR, "a[id = 'item_4_title_link']").text
-    time.sleep(3)
+    time.sleep(4)
     assert item_text_before == item_text_after
 
     browser.quit()

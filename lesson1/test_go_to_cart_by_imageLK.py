@@ -14,7 +14,7 @@ def test_transition_to_cart_by_foto():
 
     backpack_foto = browser.find_element(By.XPATH, '//*[@id="item_4_img_link"]/img')
     backpack_foto.click()
-    time.sleep(4)
+    time.sleep(3)
     # Assertion to check if the URL contains the product ID
     assert 'inventory-item.html?id=4' in browser.current_url
 
