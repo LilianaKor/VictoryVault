@@ -21,7 +21,7 @@ def test_item_image():
     # clicking on the item image
     item_image = browser.find_element(By.XPATH, '//*[@id="item_4_img_link"]/img')
     item_image.click()
-    time.sleep(5)
+    time.sleep(3)
 
     assert browser.current_url == "https://www.saucedemo.com/inventory-item.html?id=4"
     assert "Sauce Labs Backpack" in browser.page_source
