@@ -23,7 +23,7 @@ def test_add_item_into_cartLKor():
     cart.click()
 
     item_text_after = browser.find_element(By.CSS_SELECTOR, "a[id = 'item_4_title_link']").text
-    time.sleep(4)
+    time.sleep(3)
     assert item_text_before == item_text_after
 
     browser.quit()
