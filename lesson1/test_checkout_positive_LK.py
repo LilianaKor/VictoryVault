@@ -27,21 +27,21 @@ def test_checkout_positive():
     time.sleep(3)
     assert 'cart.html' in browser.current_url
 
-    # checkout_button = browser.find_element(By.XPATH, "//a[text()='CHECKOUT']")
-    # checkout_button.click()
-    # time.sleep(2)
-    #
-    # # Fill in checkout information
-    # browser.find_element(By.ID, 'first-name').send_keys('Cece')
-    # browser.find_element(By.ID, 'last-name').send_keys('Mous')
-    # browser.find_element(By.ID, 'postal-code').send_keys('90401')
-    #
-    # # Click on continue to complete the checkout
-    # continue_button = browser.find_element(By.XPATH, "//input[@value='CONTINUE']")
-    # continue_button.click()
-    # time.sleep(2)
-    #
-    # # Assertion to check if the user is navigated to the next step of checkout (assuming there's a confirmation page)
-    # assert 'checkout-step-two.html' in browser.current_url
-    #
+    checkout_button = browser.find_element(By.XPATH, "//a[text()='CHECKOUT']")
+    checkout_button.click()
+    time.sleep(4)
+
+    # Fill in checkout information
+    browser.find_element(By.ID, 'first-name').send_keys('Cece')
+    browser.find_element(By.ID, 'last-name').send_keys('Mous')
+    browser.find_element(By.ID, 'postal-code').send_keys('90401')
+
+    # Click on continue to complete the checkout
+    continue_button = browser.find_element(By.XPATH, "//input[@value='CONTINUE']")
+    continue_button.click()
+    time.sleep(3)
+
+    # Assertion to check if the user is navigated to the next step of checkout (assuming there's a confirmation page)
+    assert 'checkout-step-two.html' in browser.current_url
+
 
