@@ -39,7 +39,8 @@ def test_checkout_positive():
     # Click on continue to complete the checkout
     continue_button = browser.find_element(By.XPATH, "//input[@value='CONTINUE']")
     continue_button.click()
-    time.sleep(3)
+    time.sleep(3
+               )
 
     # Assertion to check if the user is navigated to the next step of checkout (assuming there's a confirmation page)
     assert 'checkout-step-two.html' in browser.current_url
