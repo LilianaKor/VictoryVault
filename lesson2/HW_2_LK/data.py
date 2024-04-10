@@ -1,8 +1,11 @@
+
+
 LOGIN = 'standard_user'
 PASSWORD = 'secret_sauce'
 
 # URLS
 MAIN_PAGE = 'https://www.saucedemo.com/'
+INVENTORY_PAGE = 'https://www.saucedemo.com/inventory.html'
 
 
 
@@ -29,10 +32,3 @@ MAIN_PAGE = 'https://www.saucedemo.com/'
 # # --------------------------------------------------------------------------------
 # # --------------------------------------------------------------------------------
 # register_form_url = “https://victoretc.github.io/webelements_information/”
-#
-# saucedemo.comsaucedemo.com
-# Swag Labs
-# Sauce Labs Swag Labs app
-#
-# saucelabs.comsaucelabs.com
-# Sauce Labs: Cross Browser Testing, Selenium Testing & Mobile Testing

@@ -30,8 +30,9 @@ def test_transition_to_cart_by_name():
     browser.find_element(By.ID, 'password').send_keys('secret_sauce')
     browser.find_element(By.ID, 'login-button').click()
 
-    # Click on the product name
-    backpack_name = browser.find_element(By.XPATH, "//div[@class='inventory_item_name' and text()='Sauce Labs Backpack']")
+    #Click on the product name
+    backpack_name = browser.find_element(By.XPATH,
+                                         "//div[@class='inventory_item_name' and text()='Sauce Labs Backpack']")
     backpack_name.click()
     time.sleep(4)
 

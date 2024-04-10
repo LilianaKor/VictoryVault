@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import pytest
 import time
+from selenium.webdriver.common.by import By
 
 browser = webdriver.Chrome()
 
@@ -27,3 +28,23 @@ def test_add_item_into_cartLKor():
     assert item_text_before == item_text_after
 
     browser.quit()
+
+
+def test_add_item_to_cart_from_catalog(browser):
+    browser.get('https://www.saucedemo.com/inventory.html')
+    backpack_add_button = browser.find_element(By.ID, 'add-to-cart-sauce-labs-backpack')
+    backpack_add_button.click()
+    time.sleep(2)  # Add a short delay for the changes to take effect
+
+def test_add_item_to_cart_from_catalog():
+    browser.get('https://www.saucedemo.com/inventory.html')
+    backpack_add_button = browser.find_element(By.ID, 'add-to-cart-sauce-labs-backpack')
+    backpack_add_button.click()
+    # cart_button = browser.find_element(By.CLASS_NAME, 'shopping_cart_link')
+    # cart_button.click()
+    #
+    # backpack_item = browser.find_element(By.XPATH, '//*[id = "item_4_title_link"]/div')
+    # #assert backpack_item.is_displayed() is True
+    # assert backpack_item.text == 'Sauce Labs Backpack'
+    #
+    # browser.quit()
