@@ -5,6 +5,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 import pytest
 
+
 @pytest.fixture
 def chrome_options():
     options = Options()
