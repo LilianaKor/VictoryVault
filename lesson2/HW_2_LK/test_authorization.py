@@ -47,3 +47,6 @@ def test_login_with_invalid_credentials(driver):
     error_message = driver.find_element(*ERROR_MESSAGE).text
     assert ("Username and password do not match any user in this service"
             in error_message), "Login didn't fail with invalid credentials"
+
+
+#def login():
