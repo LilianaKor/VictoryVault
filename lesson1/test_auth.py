@@ -25,6 +25,21 @@ def test_auth_negative():
     assert error_message.is_displayed()
     print(error_message.text)
 
+
+def login():
+    browser.get('https://www.saucedemo.com/')
+    browser.implicitly_wait(10)
+    browser.find_element('xpath', '//*[@id="user-name"]').send_keys('standard_user')
+    browser.find_element(By.XPATH, '//*[@id="password"]').send_keys('secret_sauce')
+    browser.find_element(By.XPATH, '//*[@id="login-button"]').click()
+
+
+def test_auth_transition_to_cart_by_name():
+    login()
+    item_title = browser.find_element(By.XPATH, '//*[@id="item_4_title_link"]/div')
+    item_title.click()
+
+
     browser.quit()
 
 
