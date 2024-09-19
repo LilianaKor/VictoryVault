@@ -1,8 +1,6 @@
 import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.chrome.service import Service
 
 # Локаторы
 USERNAME_INPUT = (By.ID, "user-name")
@@ -23,6 +21,8 @@ def driver():
     driver.implicitly_wait(10)  # Устанавливается глобальное ожидание
     driver.get("https://victoretc.github.io/selenium_waits/")
     return driver
+
+
 # Фикстура для инициализации драйвера
 # @pytest.fixture(scope="function")
 # def driver():
@@ -39,6 +39,7 @@ def test_login_with_valid_credentials(driver):
     driver.find_element(*LOGIN_BUTTON).click()
     assert "inventory.html" in driver.current_url, "Login failed with valid credentials"
 
+
 # Тест с невалидными учетными данными
 def test_login_with_invalid_credentials(driver):
     driver.find_element(*USERNAME_INPUT).send_keys(INVALID_USERNAME)
@@ -48,5 +49,4 @@ def test_login_with_invalid_credentials(driver):
     assert ("Username and password do not match any user in this service"
             in error_message), "Login didn't fail with invalid credentials"
 
-
-#def login():
+# def login():

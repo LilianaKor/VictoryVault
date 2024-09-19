@@ -1,4 +1,4 @@
-from selenium import webdriver 
+from selenium import webdriver
 from selenium.webdriver.common.by import By
 import pytest
 import time
@@ -9,7 +9,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 browser = webdriver.Chrome()
 
-MENU = (By.CSS_SELECTOR, )
+MENU = (By.CSS_SELECTOR,)
 # ABOUT = (By.)
 # ABOUT_TEXT = (By.)
 LOGOUT_MENU = (By.ID, '')
@@ -22,12 +22,13 @@ ADD_TO_CART_BTN = (By.CSS_SELECTOR, '')
 
 driver_path = ChromeDriverManager().install()
 
-#create a new Chrome browser instance
+# create a new Chrome browser instance
 service = Service(driver_path)
-browser = webdriver. Chrome(service=service)
+browser = webdriver.Chrome(service=service)
 browser.maximize_window()
 browser.implicitly_wait(5)
-wait = WebDriverWait(browser,10)
+wait = WebDriverWait(browser, 10)
+
 
 def test_auth_positive():
     browser.get('https://www.saucedemo.com/v1/')
@@ -39,6 +40,7 @@ def test_auth_positive():
 
     browser.quit()
 
+
 def test_auth_negative():
     browser.get('https://www.saucedemo.com/')
 
@@ -49,8 +51,9 @@ def test_auth_negative():
     assert error_message.is_displayed()
     print(error_message.text)
 
+    # #  create login function
 
-     # #  create login function
+
 def login():
     browser.get('https://www.saucedemo.com/')
     browser.implicitly_wait(10)
@@ -64,7 +67,4 @@ def test_auth_transition_to_cart_by_name():
     item_title = browser.find_element(By.XPATH, '//*[@id="item_4_title_link"]/div')
     item_title.click()
 
-
     browser.quit()
-
-
